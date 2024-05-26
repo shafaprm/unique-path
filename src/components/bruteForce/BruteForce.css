@@ -1,0 +1,208 @@
+.container{
+    width: 100vw;
+    height: calc(100vh - 50px) !important;
+    border-left: 36px solid #000;
+    border-right: 36px solid #000;
+    position: relative;
+    font-family: 'PT Sans';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 200px;
+}
+
+.settings-container{
+    width: 100vw;
+    height: 40px;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-container{
+    width: 470px;
+    height: 55px;
+    position: absolute;
+    bottom: 254px;
+    right: -43px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-wrapper{
+    height: 100%;
+    width: 90%;
+    background-color: #FEC515;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.text-button{
+    height: 100%;
+    width: 47px;
+    border: none;
+    border-left: 4px solid #fff;
+    background-color: #FEC515;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 9px;
+    color: #000;
+    cursor: pointer;
+    z-index: 4
+}
+
+
+.code-container{
+    width: 470px;
+    height: 200px;
+    position: absolute;
+    bottom: 50px;
+    right: -43px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.code-wrapper{
+    height: 100%;
+    width: 90%;
+    background-color: #52BC69;
+    color: #fff;
+    line-height: 150%;
+    font-family: 'Courier Prime';
+    font-size: 13px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.code-wrapper div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.code-button{
+    height: 100%;
+    width: 47px;
+    border: none;
+    border-left: 4px solid #fff;
+    background-color: #52BC69;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 9px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.text-icon{
+    display: inline-block;
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+.code-icon{
+    display: inline-block;
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+.active{
+    transform: rotate(0deg);
+}
+
+.settings-wrapper{
+    width: 7%;
+    /* background-color: #fff; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settings-wrapper button{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+.settings-wrapper button:hover{
+    opacity: 0.7;
+}
+
+.main-button{
+    font-size: 18px;
+}
+
+.prev-button, .next-button{
+    font-size: 26px;
+}
+
+.grid-container{
+    width: 20%;
+    height: 35%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid #000;
+}
+
+.grid-container div{
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+}
+
+.right-arrow{
+    position: absolute;
+    font-size: 40px;
+    right: -20px;
+    opacity: 0;
+    z-index: 4;
+    color: #000;
+}
+
+.down-arrow{
+    position: absolute;
+    font-size: 40px;
+    bottom: -20px;
+    opacity: 0;
+    z-index: 4;
+    color: #000;
+}
+
+#box-3 .close-icon, #box-7 .close-icon{
+    position: absolute;
+    right: -55px;
+    color: #FF0000;
+    font-size: 40px;
+    opacity: 0;
+}
+
+#box-9 .close-icon, #box-10 .close-icon{
+    position: absolute;
+    bottom: -55px;
+    color: #FF0000;
+    font-size: 40px;
+    opacity: 0;
+}
+
