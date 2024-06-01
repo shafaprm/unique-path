@@ -39,6 +39,7 @@
     background-color: #FEC515;
     padding: 10px;
     font-size: 14px;
+    position: relative;
 }
 
 .text-button{
@@ -206,3 +207,10 @@
     opacity: 0;
 }
 
+.title-text{
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    top: -30px;
+    right: 5px;
+}

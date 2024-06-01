@@ -118,6 +118,7 @@ const BruteForce = () => {
           animate={{ x: textButton ? 425 : 0 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
         >
+          <p className = "title-text">Brute Force</p>
           Algoritma brute force menggunakan metode rekursif untuk memanfaatkan semua
           jalur yang mungkin.
         </motion.div>

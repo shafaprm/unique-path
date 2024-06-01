@@ -6,16 +6,10 @@ import {
   MdOutlineReplay,
   MdOutlineArrowBackIosNew,
 } from "react-icons/md"; // prev and next
-import {
-  HiOutlineArrowLongRight,
-  HiOutlineArrowLongDown,
-} from "react-icons/hi2";
-import { IoClose } from "react-icons/io5";
+
 import { motion, useAnimate } from "framer-motion";
 
-import { gridAnimation, codeAnimation } from "./animation.js";
-
-import Grid from './Grid.js'
+import {codeAnimation, Grid} from './Grid.js'
 
 import "./Dynamic.css";
 
@@ -23,7 +17,6 @@ const Dynamic = () => {
   const [textButton, setTextButton] = useState(false);
   const [codeButton, setCodeButton] = useState(false);
   const [startAnimation, setAnimation] = useState(false);
-  const [scope, animate] = useAnimate();
   const [scopeCode, animateCode] = useAnimate();
 
   const handleTextButton = () => {
@@ -36,6 +29,7 @@ const Dynamic = () => {
 
   const handleAnimation = async () => {
     setAnimation(!startAnimation)
+    codeAnimation(animateCode)
   };
 
   return (
@@ -64,6 +58,7 @@ const Dynamic = () => {
           animate={{ x: textButton ? 425 : 0 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
         >
+          <p className = "title-text">Dynamic Programming</p>
           Algoritma Dynamic Programming memetakan array dua dimensi dengan
           menginisiasi kolom paling kiri dan baris dengan nilai 1.
         </motion.div>
@@ -80,24 +75,17 @@ const Dynamic = () => {
           transition={{ ease: "easeOut", duration: 0.5 }}
           ref={scopeCode}
         >
-          <motion.div id="code-0">function solve(grid):</motion.div>
+          <motion.div id="code-0">function uniquePathsWithObstacles(grid):</motion.div>
           <motion.div id="code-1">
-            &nbsp;&nbsp;{`if i < 0 or j < 0 or i >= m or j >= m:`}
+            &nbsp;&nbsp;{`fill first cols and rows with 0 or 1`}
           </motion.div>
-          <motion.div id="code-2">&nbsp;&nbsp;&nbsp;&nbsp;return 0</motion.div>
-          <motion.div id="code-3">&nbsp;&nbsp;if grid[i][j]:</motion.div>
-          <motion.div id="code-4">&nbsp;&nbsp;&nbsp;&nbsp;return 0</motion.div>
-          <motion.div id="code-5">
-            &nbsp;&nbsp;if i == m - 1 and j == n - 1 and !grid[i][j]:
-          </motion.div>
-          <motion.div id="code-6">&nbsp;&nbsp;&nbsp;&nbsp;return 1</motion.div>
-          <motion.div id="code-7">
-            &nbsp;&nbsp;{`return solve(grid, i + 1, j) +`}
-          </motion.div>
-          <motion.div id="code-8">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {`solve(grid, i, j + 1)`}
-          </motion.div>
+          <motion.div id="code-2">&nbsp;&nbsp;for i from 1 to rows</motion.div>
+          <motion.div id="code-3">&nbsp;&nbsp;&nbsp;&nbsp;for i from 1 to cols</motion.div>
+          <motion.div id="code-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`if grid[i][j] == 1:`}</motion.div>
+          <motion.div id="code-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`dp[i][j] = 0`}</motion.div>
+          <motion.div id="code-6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`else:`}</motion.div>
+          <motion.div id="code-7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`dp[i][j] = dp[i - 1][j] + dp[i][j - 1]`}</motion.div>
+          <motion.div id="code-8">&nbsp;&nbsp;return dp[rows - 1][cols - 1]</motion.div>
         </motion.div>
         <button className="code-button" onClick={handleCodeButton}>
           <MdOutlineArrowBackIosNew
